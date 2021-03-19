@@ -1,48 +1,41 @@
 import React, {useState} from 'react';
-import './App.css';
+import {Settings} from "./Settings/Settings";
+import {Increment} from "./Increment/Increment";
+import s from './App.module.css'
 
 function App() {
 
-    const main = {
-        width: '300px',
-        height: '200px',
-        padding: '20px',
-        border: '2px solid blue',
-        margin: '150px auto'
-    }
+    const [maxValue, setMaxvalue] = useState<number>(0)
+    const [startValue, setStartValue] = useState<number>(0)
+    let [count, setCount] = useState<number>(0)
+    let [disabledForSet, setDisabledForSet] = useState<boolean>(false)
+    let [disabledForInc, setDisabledForInc] = useState<boolean>(true)
+    let [disabledForReset, setDisabledForReset] = useState<boolean>(true)
 
-    const counter = {
-        width: '280px',
-        height: '100px',
-        border: '2px solid blue'
-    }
-
-    const inc = {
-        width: '102px',
-        height: '50px',
-        marginBottom: '70px'
-    }
-
-    const reset = {
-        width: '182px',
-        height: '50px',
-        marginTop: '20px'
-    }
-    let [value, setValue] = useState(0)
     return (
+        <div className={s.main}>
+            <Increment count={count}
+                       setCount={setCount}
+                       maxValue={maxValue}
+                       disabledForInc={disabledForInc}
+                       setDisabledForInc={setDisabledForInc}
+                       disabledForReset={disabledForReset}
+                       setDisabledForReset={setDisabledForReset}
+                       startValue={startValue}
+                       disabledForSet={disabledForSet}
+            />
 
-        <div style={main}>
-            <div style={counter} >{value}</div>
-            <div>
-                <button style={inc} disabled={false} onClick={() => {
-                    setValue(value++)
-                    if(value === 5){
-                        
-                    }
-                }}>inc
-                </button>
-                <button style={reset}  disabled={true}  onClick={() => {setValue(0)}}>reset</button>
-            </div>
+            <Settings
+                startValue={startValue}
+                maxValue={maxValue}
+                setMaxvalue={setMaxvalue}
+                setStartValue={setStartValue}
+                setCount={setCount}
+                disabledForSet={disabledForSet}
+                setDisabledForSet={setDisabledForSet}
+                setDisabledForInc={setDisabledForInc}
+            />
+
         </div>
     );
 }

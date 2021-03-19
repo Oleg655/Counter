@@ -1,0 +1,49 @@
+.main {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 2px solid blue;
+    margin: 150px auto;
+}
+.counter {
+    width: 297px;
+    height: 100px;
+    border: 2px solid blue;
+    text-align: center;
+    color: blue;
+    font-size: 60px;
+}
+.redCounter {
+    width: 297px;
+    height: 100px;
+    border: 2px solid blue;
+    text-align: center;
+    color: red;
+    font-size: 60px;
+}
+.start{
+    width: 297px;
+    height: 100px;
+    border: 2px solid blue;
+    text-align: center;
+    color: blue;
+    font-size: 20px;
+}
+.redStart{
+    width: 297px;
+    height: 100px;
+    border: 2px solid blue;
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
+.panel{
+    margin-top: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.button{
+    width: 100px;
+    height: 50px;
+}
